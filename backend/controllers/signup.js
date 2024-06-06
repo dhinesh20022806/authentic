@@ -1,7 +1,9 @@
 'use strict';
+const { getAllUser } = require('../models/signup');
 
-exports.getSignup = (req, res) => {
-  res.end('<h1>Signup</h1>');
+exports.getSignup = async (req, res) => {
+  const users = await getAllUser();
+  res.status(200).json(users);
 };
 
 exports.postSignup = (req, res) => {
