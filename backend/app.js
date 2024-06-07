@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json())
 
-app.use(logger('common'));
+app.use(logger('dev'));
 
 app.use(signupRouter)
 
