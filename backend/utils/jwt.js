@@ -12,6 +12,6 @@ exports.genTokens = (user_id, user_email) => {
     secret,
     { expiresIn: '1h' }
   );
-    
-    return token;
+
+  return token;
 };
