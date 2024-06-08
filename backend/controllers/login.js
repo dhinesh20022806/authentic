@@ -1,8 +1,10 @@
 'use strict';
 
 const { validUser } = require('../models/login');
+const { genTokens } = require('../utils/jwt');
 
 exports.loginUser = async (req, res) => {
+    console.log(req.headers.authorization);
   const { email, password } = req.body;
 
   try {

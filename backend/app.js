@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(logger('dev'));
 
-app.use(signupRouter);
-app.use(loginRouter);
+app.use( "/signup",signupRouter);
+app.use('/login', loginRouter);
 
 module.exports = app;
