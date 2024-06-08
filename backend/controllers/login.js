@@ -10,7 +10,7 @@ exports.loginUser = async (req, res) => {
   try {
     const getUser = await validUser(email, password);
 
-    const token = await genTokens(getUser.id, getUser.email);
+    const token = await genTokens(getUser.id, getUser.email, getUser.username);
     const data = {
       username: getUser.username,
       token,

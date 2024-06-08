@@ -12,7 +12,7 @@ exports.postSignup = async (req, res) => {
   try {
     const user = await createUser(username, email, password);
 
-    const token = genTokens(user.id, user.email);
+    const token = genTokens(user.id, user.email, user.username);
 
     res.status(201).json({
       status: 'success',

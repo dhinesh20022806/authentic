@@ -27,7 +27,7 @@ exports.createUser = async (username, email, password) => {
   return res.rows[0];
 };
 
-exports.isExist = async (columnName, columnValue) => {
+const isExist = async (columnName, columnValue) => {
   const query = {
     text: `SELECT * FROM users WHERE ${columnValue} = $1`,
     values: [columnName],
