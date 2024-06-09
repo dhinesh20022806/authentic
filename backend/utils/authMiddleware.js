@@ -7,6 +7,16 @@ exports.authMiddleWare = (req, res, next) => {
     
     const userToken = req.headers.authorization;
 
-    verifyTokens(userToken);
+   try {
+       const validToken = verifyTokens(userToken);
+       req.token = validToken;
+       
+   } catch (error) {
+       res.status(400).json({
+           status: 'failure',
+           data:'invalid token'
+       })
+    
+   }
     
 }
