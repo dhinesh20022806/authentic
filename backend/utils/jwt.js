@@ -19,7 +19,10 @@ exports.genTokens = (user_id, user_email, user_name) => {
 
 exports.verifyTokens = (token) => {
   try {
+    console.log(token, 'token are here');
+    console.log(typeof token);
     let decode = jwt.verify(token, secret);
+    console.log('decoding', decode);
     return decode;
   } catch (error) {
     throw new Error("invalid token");

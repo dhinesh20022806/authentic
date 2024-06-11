@@ -5,7 +5,7 @@ const signupRouter = require('./routers/signup');
 const loginRouter = require('./routers/login');
 const homeRouter = require('./routers/home');
 const { authMiddleWare } = require('./utils/authMiddleware');
-const { verifyTokens } = require('./utils/jwt');
+
 
 const app = express();
 
