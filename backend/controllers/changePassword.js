@@ -14,7 +14,7 @@ exports.changePassword = async (req, res) => {
   console.log(email);
 
   try {
-    const res = await updatePassword(email, password, newPassword);
+    const result = await updatePassword(email, password, newPassword);
 
     res.status(200).json({
       status: 'success',

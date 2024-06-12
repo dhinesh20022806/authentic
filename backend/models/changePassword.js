@@ -33,7 +33,7 @@ exports.updatePassword = async (email, password, newPassword) => {
             values:[hashNewPassword, email]
         }
         const updatePassword = await pool.query(query);
-        console.log(updatePassword);
+        console.log(updatePassword, 'updated password');
 
     }
 
