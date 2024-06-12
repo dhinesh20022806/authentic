@@ -1,7 +1,7 @@
 'use strict';
 const nodemailer = require('nodemailer');
 
-exports.sendEmail = async (email,otp,message) =>{
+exports.sendEmail = async ({email,message, subject}) =>{
   try {
     const transport = nodemailer.createTransport({
       service: 'Gmail',
@@ -13,9 +13,9 @@ exports.sendEmail = async (email,otp,message) =>{
 
     const mailOptions = {
       from: 'dhinesh20022806@gmail.com',
-      to: 'dhineshananthakumar.a8@gmail.com',
-      subject: 'Testing Nodemailer',
-      text: "That's so simple, not too hard",
+      to: email,
+      subject,
+      text : message,
     };
 
     const info = await transport.sendMail(mailOptions);
