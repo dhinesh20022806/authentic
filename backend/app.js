@@ -1,10 +1,12 @@
 'use strict';
 const express = require('express');
 const logger = require('morgan');
+
 const signupRouter = require('./routers/signup');
 const loginRouter = require('./routers/login');
-const homeRouter = require('./routers/home');
 const changePasswordRouter = require('./routers/changePassword')
+const forgetPasswordRouter = require('./routers/forgetPassword');
+
 const { authMiddleWare } = require('./utils/authMiddleware');
 
 
@@ -17,8 +19,9 @@ app.use(logger('dev'));
 app.use( "/signup",signupRouter);
 app.use('/login', loginRouter);
 
+app.use(forgetPasswordRouter)
+
 app.use(authMiddleWare);
 app.use(changePasswordRouter)
 
-app.use(homeRouter)
 module.exports = app;
