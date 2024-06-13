@@ -9,7 +9,7 @@ exports.changePassword = async (req, res) => {
   const authFragment = req.headers.authorization.split(' ');
   const userToken = authFragment[1];
 
-  const { user_email:email } = verifyTokens(userToken);
+  const { user_email: email } = verifyTokens(userToken);
 
   console.log(email);
 
@@ -21,9 +21,9 @@ exports.changePassword = async (req, res) => {
       data: 'Password was successfully changed',
     });
   } catch (error) {
-      res.status(404).json({
-          status: 'failure',
-           error: error.message ,
-      })
+    res.status(404).json({
+      status: 'failure',
+      error: error.message,
+    });
   }
 };
